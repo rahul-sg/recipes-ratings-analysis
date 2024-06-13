@@ -4,6 +4,7 @@
 <body>
     <header>
         <h1>Welcome to Our Recipe Ratings Analysis!</h1>
+        <h3>By: Rahul Sengupta</h3>
         <div></div>
     </header>
     <section>
@@ -224,28 +225,28 @@
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3>'number_steps'</h3>
             <p>
                 We examined the distribution of the 'number_steps' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar2.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="assets/univar2.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
                 <figcaption>The distribution of the number of steps shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes having lesser steps to complete.</figcaption>
             </p>
             <h3>'rating'</h3>
             <p>
                 We examined the distribution of the 'rating' to understand how ratings are typically assigned for recips:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar3.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="assets/univar3.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
                 <figcaption>The distribution of ratings shows a left-skewed pattern, indicating that most recipes have pretty high ratings. One can infer that food is a comfort for many, which is why people are more compelled to rate them higher as opposed to goods from amazon or any other items purchased/made</figcaption>
             </p>
             <h3>'average_rating'</h3>
             <p>
                 We examined the distribution of the 'average_rating' to how ratings are distributed based on each recipe:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar4.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="assets/univar4.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
                 <figcaption>The distribution of average ratings also shows a right-skewed pattern. In this case we can see that the 4 star rating is more common than the 5 star rating for the distribution of all ratings. This could suggest that a majority of ratings of a recipe are 4 stars as it is grouped by recipe here and not a total distribution. </figcaption>
             </p>
         <h2>Bivariate Analysis</h2>
@@ -273,6 +274,7 @@
                 </li>
             </ul>
             The resulting pivot table shows the mean ratings for recipes based on these classifications, allowing us to see whether recipes that are more time-consuming or complex (in terms of steps) receive higher or lower average ratings compared to their simpler counterparts.
+            <div></div>
             <!-- Embed a grouped table or pivot table -->
             <table border="1" class="dataframe">
             <thead>
@@ -338,16 +340,15 @@
         <p>
             Recognizing NMAR is crucial because it influences how we interpret the completeness and reliability of the dataset. For example, if complex recipes are less likely to be rated, analyses that do not account for this may inaccurately reflect user preferences or recipe quality.
         </p>
-        <h2>Addressing NMAR</h2>
+        <h2>Addressing NMAR in Our Dataset</h2>
         <p>
-            To potentially address this issue and better understand the missing data mechanism, we could consider the following approaches:
+            To potentially address this issue and better understand the missing data mechanism, we could consider the following:
         </p>
-        <ul>
-            <li>Collecting additional data on user engagement, such as time spent on the recipe page, interactions with the ingredient list, or bookmarking activity.</li>
-            <li>Gathering information on user behavior regarding similar recipes to identify patterns or biases in rating habits related to recipe complexity or ingredient availability.</li>
-        </ul> 
         <p>
-            Such additional data could help convert scenarios from NMAR to Missing At Random (MAR), allowing for more robust statistical inferences.
+        The following graph represents the Empirical Distribution of the shuffled abs differences based on two columns that are potentially MAR: ratings and average_ratings
+        <!-- Embed another Plotly plot -->
+        <iframe src="assets/missingness.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="400" frameborder="0"></iframe>
+        <figcaption>Based on the permutation test, the observed absolute difference in 'average_rating' between recipes with and without ratings is approximately 0.105. The p-value of 0.185 exceeds the common significance threshold of 0.05, indicating that there is not enough evidence to reject the null hypothesis at the 5% significance level. Consequently, we fail to reject the null hypothesis, suggesting that the observed difference could occur by random chance under the null conditions. Therefore, we do not have sufficient statistical evidence to conclude that the missingness in 'rating' is dependent on 'average_rating'.</figcaption>
         </p>
     </section>
 </body>
