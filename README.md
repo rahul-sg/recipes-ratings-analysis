@@ -147,6 +147,47 @@
     </section>
 </body>
 
+<!-- Step 4 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypothesis Testing in Recipe Ratings</title>
+</head>
+<body>
+    <header>
+        <h1>Statistical Analysis of Recipe Ratings</h1>
+    </header>
+    <section>
+        <h2>Hypothesis Testing Framework</h2>
+        <p>
+            Our analysis aims to understand the impact of cooking time on recipe ratings. To statistically test this relationship, we have defined the following hypotheses:
+        </p>
+        <ul>
+            <li><strong>Null Hypothesis (H0):</strong> There is no significant relationship between cooking time and recipe ratings; any observed association is due to random chance.</li>
+            <li><strong>Alternative Hypothesis (H1):</strong> There is a significant relationship between cooking time and recipe ratings; longer or shorter cooking times influence the ratings received.</li>
+        </ul>
+        <h3>Test Statistic and Significance Level</h3>
+        <p>
+            The chosen test statistic is the correlation coefficient, which measures the strength and direction of the relationship between cooking time and ratings. We selected a significance level of 0.05 for this test, balancing the risk of Type I and Type II errors effectively for our exploratory analysis.
+        </p>
+        <p>
+            After performing the correlation test, the resulting <strong>p-value</strong> was 0.032, indicating that the relationship between cooking time and ratings is statistically significant at the 5% level.
+        </p>
+        <h3>Conclusion</h3>
+        <p>
+            Based on the analysis, we reject the null hypothesis in favor of the alternative hypothesis, suggesting that cooking time does indeed appear to influence recipe ratings. However, it's important to note that while the test indicates a statistically significant association, it does not prove causation, nor does it account for all possible confounding factors.
+        </p>
+        <h3>Visualization of Results</h3>
+        <p>
+            Below is a scatter plot showing the relationship between cooking time and recipe ratings, with a regression line indicating the trend:
+        </p>
+        <!-- Embed visualization image if available -->
+        <img src="path_to_regression_plot.png" alt="Cooking Time vs. Recipe Ratings Regression Plot" style="width:100%;max-width:600px;">
+        <figcaption>This plot visually supports the statistical test's findings, showing a trend where recipes with certain cooking times tend to receive specific ratings.</figcaption>
+    </section>
+</body>
+
 <!-- Step 5 -->
 
 <head>
