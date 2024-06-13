@@ -224,28 +224,28 @@
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar1.png" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="univar1.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3>'number_steps'</h3>
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar2.png" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="univar2.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3>'rating'</h3>
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar3.png" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="univar3.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3>'average_rating'</h3>
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar.png" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="univar.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
         <h2>Bivariate Analysis</h2>
