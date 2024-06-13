@@ -224,29 +224,29 @@
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar1.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3>'number_steps'</h3>
             <p>
-                We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
+                We examined the distribution of the 'number_steps' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar2.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
-                <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
+                <iframe src="assets/univar2.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <figcaption>The distribution of the number of steps shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes having lesser steps to complete.</figcaption>
             </p>
             <h3>'rating'</h3>
             <p>
-                We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
+                We examined the distribution of the 'rating' to understand how ratings are typically assigned for recips:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar3.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
-                <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
+                <iframe src="assets/univar3.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <figcaption>The distribution of ratings shows a left-skewed pattern, indicating that most recipes have pretty high ratings. One can infer that food is a comfort for many, which is why people are more compelled to rate them higher as opposed to goods from amazon or any other items purchased/made</figcaption>
             </p>
             <h3>'average_rating'</h3>
             <p>
-                We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
+                We examined the distribution of the 'average_rating' to how ratings are distributed based on each recipe:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="univar.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
-                <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
+                <iframe src="assets/univar.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <figcaption>The distribution of average ratings also shows a right-skewed pattern. In this case we can see that the 4 star rating is more common than the 5 star rating for the distribution of all ratings. This could suggest that a majority of ratings of a recipe are 4 stars as it is grouped by recipe here and not a total distribution. </figcaption>
             </p>
         <h2>Bivariate Analysis</h2>
         <p>
