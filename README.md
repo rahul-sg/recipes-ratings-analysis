@@ -8,6 +8,7 @@
 <body>
     <header>
         <h1>Welcome to Our Recipe Ratings Analysis!</h1>
+        <div></div>
     </header>
     <section>
         <h2>Introduction to the Dataset</h2>
