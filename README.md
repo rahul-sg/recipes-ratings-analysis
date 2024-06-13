@@ -21,7 +21,7 @@
         <h3>Dataset Overview</h3>
         <ul>
             <li><strong>Number of Rows:</strong> 234,429</li>
-            <li><strong>Relevant Columns:</strong></li>
+            <li><strong>Possibly Relevant Columns:</strong></li>
             <ul>
                 <li><strong>cook_time:</strong> The time required to prepare and cook the recipe, measured in minutes.</li>
                 <li><strong>average_rating:</strong> The average rating given to the recipe by users, on a scale from 1 to 5.</li>
@@ -33,11 +33,6 @@
 
 <!-- Step 2 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Cleaning and Exploratory Data Analysis</title>
-</head>
 <body>
     <header>
         <h1>Data Cleaning and Exploratory Analysis</h1>
@@ -53,20 +48,29 @@
             </ul>
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
-            <img src="path_to_dataframe_head.png" alt="Head of Cleaned DataFrame">
+            <table>| name                                 |   recipe_id |   cook_time |   contributor_id | submitted           | tags                                                                                                                                                                                                                        |   number_steps | steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | description                                                                                                                                                                                                                                                                                                                                                                       | ingredients                                                                                                                                                                    |   n_ingredients |          user_id | date                |   rating | review                                                                                                                                                                                                                                                                                                                                           |   average_rating |   calories |   total_fat_PDV |   sugar_PDV |   sodium_PDV |   protein_PDV |   sat_fat_PDV |   carbs_PDV | cook_time_category   | number_steps_category   |
+|:-------------------------------------|------------:|------------:|-----------------:|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|-----------------:|:--------------------|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------:|-----------:|----------------:|------------:|-------------:|--------------:|--------------:|------------:|:---------------------|:------------------------|
+| 1 brownies in the world    best ever |      333281 |          40 |           985201 | 2008-10-27 00:00:00 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings'] |             10 | ['heat the oven to 350f and arrange the rack in the middle', 'line an 8-by-8-inch glass baking dish with aluminum foil', 'combine chocolate and butter in a medium saucepan and cook over medium-low heat , stirring frequently , until evenly melted', 'remove from heat and let cool to room temperature', 'combine eggs , sugar , cocoa powder , vanilla extract , espresso , and salt in a large bowl and briefly stir until just evenly incorporated', 'add cooled chocolate and mix until uniform in color', 'add flour and stir until just incorporated', 'transfer batter to the prepared baking dish', 'bake until a tester inserted in the center of the brownies comes out clean , about 25 to 30 minutes', 'remove from the oven and cool completely before cutting']                                                  | these are the most; chocolatey, moist, rich, dense, fudgy, delicious brownies that you'll ever make.....sereiously! there's no doubt that these will be your fav brownies ever for you can add things to them or make them plain.....either way they're pure heaven!                                                                                                              | ['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour'] |               9 | 386585           | 2008-11-19 00:00:00 |        4 | These were pretty good, but took forever to bake.  I would send it ended up being almost an hour!  Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut.  They did taste quite rich, though!  Made for My 3 Chefs.                                                                                   |                4 |      138.4 |              10 |          50 |            3 |             3 |            19 |           6 | True                 | True                    |
+| 1 in canada chocolate chip cookies   |      453467 |          45 |          1848091 | 2011-04-11 00:00:00 | ['60-minutes-or-less', 'time-to-make', 'cuisine', 'preparation', 'north-american', 'for-large-groups', 'canadian', 'british-columbian', 'number-of-servings']                                                               |             12 | ['pre-heat oven the 350 degrees f', 'in a mixing bowl , sift together the flours and baking powder', 'set aside', 'in another mixing bowl , blend together the sugars , margarine , and salt until light and fluffy', 'add the eggs , water , and vanilla to the margarine / sugar mixture and mix together until well combined', 'add in the flour mixture to the wet ingredients and blend until combined', 'scrape down the sides of the bowl and add the chocolate chips', 'mix until combined', 'scrape down the sides to the bowl again', 'using an ice cream scoop , scoop evenly rounded balls of dough and place of cookie sheet about 1 - 2 inches apart to allow for spreading during baking', 'bake for 10 - 15 minutes or until golden brown on the outside and soft & chewy in the center', 'serve hot and enjoy !'] | this is the recipe that we use at my school cafeteria for chocolate chip cookies. they must be the best chocolate chip cookies i have ever had! if you don't have margarine or don't like it, then just use butter (softened) instead.                                                                                                                                            | ['white sugar', 'brown sugar', 'salt', 'margarine', 'eggs', 'vanilla', 'water', 'all-purpose flour', 'whole wheat flour', 'baking soda', 'chocolate chips']                    |              11 | 424680           | 2012-01-26 00:00:00 |        5 | Originally I was gonna cut the recipe in half (just the 2 of us here), but then we had a park-wide yard sale, & I made the whole batch & used them as enticements for potential buyers ~ what the hey, a free cookie as delicious as these are, definitely works its magic! Will be making these again, for sure! Thanks for posting the recipe! |                4 |      595.1 |              46 |         211 |           22 |            13 |            51 |          26 | True                 | True                    |
+| 412 broccoli casserole               |      306168 |          40 |            50969 | 2008-05-30 00:00:00 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |              6 | ['preheat oven to 350 degrees', 'spray a 2 quart baking dish with cooking spray , set aside', 'in a large bowl mix together broccoli , soup , one cup of cheese , garlic powder , pepper , salt , milk , 1 cup of french onions , and soy sauce', 'pour into baking dish , sprinkle remaining cheese over top', 'bake for 25 minutes or until cheese is lightly browned', 'sprinkle with rest of french fried onions and bake until onions are browned and cheese is bubbly , about 10 more minutes']                                                                                                                                                                                                                                                                                                                              | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |               9 |  29782           | 2008-12-31 00:00:00 |        5 | This was one of the best broccoli casseroles that I have ever made.  I made my own chicken soup for this recipe. I was a bit worried about the tsp of soy sauce but it gave the casserole the best flavor. YUM!                                                                                                                                  |                4 |      194.8 |              20 |           6 |           32 |            22 |            36 |           3 | True                 | False                   |
+|                                      |             |             |                  |                     |                                                                                                                                                                                                                             |                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                |                 |                  |                     |          | The photos you took (shapeweaver) inspired me to make this recipe and it actually does look just like them when it comes out of the oven.                                                                                                                                                                                                        |                  |            |                 |             |              |               |               |             |                      |                         |
+|                                      |             |             |                  |                     |                                                                                                                                                                                                                             |                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                |                 |                  |                     |          | Thanks so much for sharing your recipe shapeweaver. It was wonderful!  Going into my family's favorite Zaar cookbook :)                                                                                                                                                                                                                          |                  |            |                 |             |              |               |               |             |                      |                         |
+| 412 broccoli casserole               |      306168 |          40 |            50969 | 2008-05-30 00:00:00 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |              6 | ['preheat oven to 350 degrees', 'spray a 2 quart baking dish with cooking spray , set aside', 'in a large bowl mix together broccoli , soup , one cup of cheese , garlic powder , pepper , salt , milk , 1 cup of french onions , and soy sauce', 'pour into baking dish , sprinkle remaining cheese over top', 'bake for 25 minutes or until cheese is lightly browned', 'sprinkle with rest of french fried onions and bake until onions are browned and cheese is bubbly , about 10 more minutes']                                                                                                                                                                                                                                                                                                                              | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |               9 |      1.19628e+06 | 2009-04-13 00:00:00 |        5 | I made this for my son's first birthday party this weekend. Our guests INHALED it! Everyone kept saying how delicious it was. I was I could have gotten to try it.                                                                                                                                                                               |                5 |      194.8 |              20 |           6 |           32 |            22 |            36 |           3 | True                 | False                   |
+| 412 broccoli casserole               |      306168 |          40 |            50969 | 2008-05-30 00:00:00 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |              6 | ['preheat oven to 350 degrees', 'spray a 2 quart baking dish with cooking spray , set aside', 'in a large bowl mix together broccoli , soup , one cup of cheese , garlic powder , pepper , salt , milk , 1 cup of french onions , and soy sauce', 'pour into baking dish , sprinkle remaining cheese over top', 'bake for 25 minutes or until cheese is lightly browned', 'sprinkle with rest of french fried onions and bake until onions are browned and cheese is bubbly , about 10 more minutes']                                                                                                                                                                                                                                                                                                                              | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |               9 | 768828           | 2013-08-02 00:00:00 |        5 | Loved this.  Be sure to completely thaw the broccoli.  I didn&#039;t and it didn&#039;t get done in time specified.  Just cooked it a little longer though and it was perfect.  Thanks Chef.                                                                                                                                                     |                4 |      194.8 |              20 |           6 |           32 |            22 |            36 |           3 | True                 | False                   |
+</table>
         </p>
         <h2>Univariate Analysis</h2>
         <p>
             We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
             <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-            <img src="path_to_cook_time_distribution_plot.png" alt="Cook Time Distribution">
+            <iframe src="path_to_cook_time_distribution_plot.png" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
             <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
         </p>
         <h2>Bivariate Analysis</h2>
         <p>
             We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
             <!-- Embed another Plotly plot -->
-            <img src="path_to_cook_time_vs_rating_plot.png" alt="Cook Time vs. Rating">
+            <iframe src="path_to_cook_time_vs_rating_plot.png" alt="Cook Time vs. Rating" width="800" height="600" frameborder="0"></iframe>
             <figcaption>This scatter plot suggests a weak positive correlation between cook time and rating, hinting that recipes requiring more time might be rated slightly higher, potentially due to complexity or taste factors.</figcaption>
         </p>
         <h2>Interesting Aggregates</h2>
@@ -102,11 +106,6 @@
 
 <!-- Step 3 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NMAR Analysis in Recipe Ratings</title>
-</head>
 <body>
     <header>
         <h1>Assessment of Missingness</h1>
@@ -144,11 +143,6 @@
 
 <!-- Step 4 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hypothesis Testing in Recipe Ratings</title>
-</head>
 <body>
     <header>
         <h1>Statistical Analysis of Recipe Ratings</h1>
@@ -178,18 +172,13 @@
             Below is a scatter plot showing the relationship between cooking time and recipe ratings, with a regression line indicating the trend:
         </p>
         <!-- Embed visualization image if available -->
-        <img src="path_to_regression_plot.png" alt="Cooking Time vs. Recipe Ratings Regression Plot" style="width:100%;max-width:600px;">
+        <iframe src="path_to_regression_plot.png" alt="Cooking Time vs. Recipe Ratings Regression Plot" width="800" height="600" frameborder="0"></iframe>
         <figcaption>This plot visually supports the statistical test's findings, showing a trend where recipes with certain cooking times tend to receive specific ratings.</figcaption>
     </section>
 </body>
 
 <!-- Step 5 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Model for Recipe Ratings</title>
-</head>
 <body>
     <header>
         <h1>Framing a Prediction Problem</h1>
@@ -218,11 +207,6 @@
 
 <!-- Step 6 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseline Model for Recipe Ratings</title>
-</head>
 <body>
     <header>
         <h1>Baseline Model Analysis</h1>
@@ -256,11 +240,6 @@
 
 <!-- Step 7 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Model Enhancements and Performance</title>
-</head>
 <body>
     <header>
         <h1>Final Model Enhancements and Performance Analysis</h1>
@@ -297,18 +276,13 @@
         <p>
             Below is a confusion matrix visualizing the performance of our final model, illustrating how well it predicts each rating category:
             <!-- Insert an image of the confusion matrix if applicable -->
-            <img src="path_to_confusion_matrix_image.png" alt="Confusion Matrix" style="width:100%;max-width:600px;">
+            <iframe src="path_to_confusion_matrix_image.png" alt="Confusion Matrix" width="800" height="600" frameborder="0"></iframe>
         </p>
     </section>
 </body>
 
 <!-- Step 8 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fairness Analysis of Recipe Ratings</title>
-</head>
 <body>
     <header>
         <h1>Fairness Analysis in Recipe Ratings</h1>
@@ -347,7 +321,7 @@
         <p>
             Below is a visualization representing the distribution of F1-Scores across the permutations conducted during the fairness analysis:
         </p>
-        <img src="path_to_permutation_test_visualization.png" alt="Permutation Test Visualization" style="width:100%;max-width:600px;">
+        <img src="path_to_permutation_test_visualization.png" alt="Permutation Test Visualization" width="800" height="600" frameborder="0">
     </section>
 </body>
 </html>
