@@ -49,7 +49,13 @@
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
             <div style="width:100%;overflow:scroll;">
-            <table border="1" class="dataframe">
+            <table border="1" class="dataframe" style="table { 
+table-layout:fixed; 
+width:100%; 
+overflow:scroll; 
+border:1px solid #f00; 
+word-wrap:none; 
+}">
   <thead>
     <tr style="text-align: right;">
       <th>name</th>
