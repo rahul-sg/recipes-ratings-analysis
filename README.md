@@ -26,7 +26,7 @@
             <ul>
                 <li><strong><code>cook_time:</code></strong> The time required to prepare and cook the recipe, measured in minutes.</li>
                 <li><strong><code>average_rating:</code></strong> The average rating given to the recipe by users, on a scale from 1 to 5.</li>
-                <li><strong><code>tags:</code></strong> Categories and descriptors tagged to the recipe, such as 'vegetarian', 'quick-eats', etc.</li>
+                <li><strong><code>tags</code></strong> Categories and descriptors tagged to the recipe, such as 'vegetarian', 'quick-eats', etc.</li>
             </ul>
         </ul>
     </section>
@@ -45,7 +45,7 @@
             <ul>
                 <li><strong>Handling Missing Data:</strong> Missing values in <code>cook_time</code> and <code>rating</code> were replaced with the median values of their respective columns to maintain data integrity without introducing bias. We used mean imputation to replace the correct missing values for numerical columns. <strong>Note:</strong> These were done after the MAR analysis.</li>
                 <li><strong>Handling datetimes:</strong> Converted the object values in <code>submitted</code> and <code>date</code> to pd.datetime objects.</li>
-                <li><strong>Melted <code>nutrition:</code></strong> Extracted the list objects from <code>nutrition</code> column and made them separate variables in the dataframe.</li>
+                <li><strong>Melted <code>nutrition</code>:</strong> Extracted the list objects from <code>nutrition</code> column and made them separate variables in the dataframe.</li>
             </ul>
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
@@ -437,10 +437,14 @@
         </ul>
         <h2>Evaluation and Conclusion</h2>
         <p>
-            While the model exhibits reasonable accuracy, it shows areas for improvement, especially in managing class balance as indicated by the F1-score.
-        </p>
-        <p>
-            Considerations for enhancing the model include adding more descriptive features, experimenting with different classifiers, and tuning hyperparameters to improve predictive performance and handle class imbalances better.
+        <strong>Assessment of Model Quality:</strong>
+        <ul>
+            <li>The model shows decent accuracy, suggesting it has a fair capability to generalize from the training data to unseen data. However, the F1-score is relatively lower, indicating potential issues with class imbalance or that the model is not equally effective across all rating classes.</li>
+            <li>Given the complex nature of taste and recipe preferences, an accuracy of approximately 72.5% is reasonably good for a baseline model but leaves room for improvement, particularly in how it handles the balance between classes as indicated by the F1-score.</li>
+        <strong>Improvement Considerations:</strong>
+        </ul>
+            <li>Enhancing the model could involve integrating more descriptive features that could influence recipe ratings, such as ingredient lists, nutritional information, or user-generated metadata like the number of reviews.</li>
+            <li>Experimenting with different classifiers and tuning the model's hyperparameters could also potentially yield better performance.</li>
         </p>
     </section>
 </body>
