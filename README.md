@@ -225,28 +225,28 @@
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
+                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="45ss0" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3>'number_steps'</h3>
             <p>
                 We examined the distribution of the 'number_steps' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar2.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
+                <iframe src="assets/univar2.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of the number of steps shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes having lesser steps to complete.</figcaption>
             </p>
             <h3>'rating'</h3>
             <p>
                 We examined the distribution of the 'rating' to understand how ratings are typically assigned for recips:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar3.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
+                <iframe src="assets/univar3.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of ratings shows a left-skewed pattern, indicating that most recipes have pretty high ratings. One can infer that food is a comfort for many, which is why people are more compelled to rate them higher as opposed to goods from amazon or any other items purchased/made</figcaption>
             </p>
             <h3>'average_rating'</h3>
             <p>
                 We examined the distribution of the 'average_rating' to how ratings are distributed based on each recipe:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar4.html" alt="Cook Time Distribution" width="800" height="400" frameborder="0"></iframe>
+                <iframe src="assets/univar4.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of average ratings also shows a right-skewed pattern. In this case we can see that the 4 star rating is more common than the 5 star rating for the distribution of all ratings. This could suggest that a majority of ratings of a recipe are 4 stars as it is grouped by recipe here and not a total distribution. </figcaption>
             </p>
         <h2>Bivariate Analysis</h2>
@@ -254,14 +254,14 @@
             <p>
                 We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
                 <!-- Embed another Plotly plot -->
-                <iframe src="assets/bivar1.html" alt="Cook Time vs. Rating" width="800" height="400" frameborder="0"></iframe>
+                <iframe src="assets/bivar1.html" alt="Cook Time vs. Rating" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>This scatter plot suggests a weak negative correlation between cook time and rating, hinting that recipes requiring more time might be rated slightly lower, potentially due to complexity or taste factors. Note: False means low cook time and True means higher cook times. A high cook time in this case is calculated by being greater than the median of the dataset (35.0 minutes in this case)</figcaption>
             </p>
             <h3>Frequency of High and Low Number of Steps for Each Rating (High/Low is Comparison to median)</h3>
             <p>
                 We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
                 <!-- Embed another Plotly plot -->
-                <iframe src="assets/bivar2.html" alt="Number Steps vs. Rating" width="800" height="400" frameborder="0"></iframe>
+                <iframe src="assets/bivar2.html" alt="Number Steps vs. Rating" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>This scatter plot suggests a weak negative correlation between the number of steps and rating, hinting that recipes with more steps might be rated slightly lower, potentially due to complexity or taste factors. Note: False means low steps and True means higher step counts. A high step count in this case is calculated by being greater than the median of the dataset (9.0 minutes in this case)</figcaption>
             </p>
         <h2>Interesting Aggregates</h2>
@@ -345,10 +345,10 @@
             To potentially address this issue and better understand the missing data mechanism, we could consider the following:
         </p>
         <p>
-        The following graph represents the Empirical Distribution of the shuffled abs differences based on two columns that are potentially MAR: ratings and average_ratings
-        <!-- Embed another Plotly plot -->
-        <iframe src="assets/missingness.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="400" frameborder="0"></iframe>
-        <figcaption>Based on the permutation test, the observed absolute difference in 'average_rating' between recipes with and without ratings is approximately 0.105. The p-value of 0.185 exceeds the common significance threshold of 0.05, indicating that there is not enough evidence to reject the null hypothesis at the 5% significance level. Consequently, we fail to reject the null hypothesis, suggesting that the observed difference could occur by random chance under the null conditions. Therefore, we do not have sufficient statistical evidence to conclude that the missingness in 'rating' is dependent on 'average_rating'.</figcaption>
+            The following graph represents the Empirical Distribution of the shuffled abs differences based on two columns that are potentially MAR: ratings and average_ratings
+            <!-- Embed another Plotly plot -->
+            <iframe src="assets/missingness.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="450" frameborder="0"></iframe>
+            <figcaption>Based on the permutation test, the observed absolute difference in 'average_rating' between recipes with and without ratings is approximately 0.105. The p-value of 0.185 exceeds the common significance threshold of 0.05, indicating that there is not enough evidence to reject the null hypothesis at the 5% significance level. Consequently, we fail to reject the null hypothesis, suggesting that the observed difference could occur by random chance under the null conditions. Therefore, we do not have sufficient statistical evidence to conclude that the missingness in 'rating' is dependent on 'average_rating'.</figcaption>
         </p>
     </section>
 </body>
@@ -373,19 +373,32 @@
             The chosen test statistic is the correlation coefficient, which measures the strength and direction of the relationship between cooking time and ratings. We selected a significance level of 0.05 for this test, balancing the risk of Type I and Type II errors effectively for our exploratory analysis.
         </p>
         <p>
-            After performing the correlation test, the resulting <strong>p-value</strong> was 0.032, indicating that the relationship between cooking time and ratings is statistically significant at the 5% level.
+            <strong>Histogram Distribution:</strong> The histogram illustrates the empirical distribution of absolute differences in shuffled data. It is centered around values between 0.04 and 0.06, indicating the most common differences generated under the null hypothesis that the factor being tested (like average rating) does not affect missingness. The distribution is slightly right-skewed, showing fewer instances of larger differences.
+        </p>
+        <p>
+            After performing the correlation test, the resulting <strong>p-value</strong> was 0.000, indicating that the relationship between cooking time and ratings is statistically significant at the 5% level. (I believe the computer truncated a very small value close to 0 to 0.000)
+        </p>
+        <p>
+            <strong>Observed Difference:</strong> The histogram highlights an observed difference (noted as 0.0572 on the graph) with a vertical line, which lies to the right of the central cluster of the distribution, suggesting that the observed difference is greater than most of the differences generated by random permutations.
+        </p>
+        <p>
+        <!-- Embed another Plotly plot -->
+            <iframe src="assets/hypothesis.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="450" frameborder="0"></iframe>
+            <figcaption><strong>Statistical Significance:</strong> A p-value of 0.0000 indicates that the observed difference is statistically significant. If the null hypothesis were true, indicating that the factor does not influence missingness, it would be very unlikely to observe such a difference purely by chance.</figcaption>
+        </p>
+        <p>   
+            <strong>Statistical Significance:</strong> A p-value of 0.0000 indicates that the observed difference is statistically significant. If the null hypothesis were true, indicating that the factor does not influence missingness, it would be very unlikely to observe such a difference purely by chance.
+        </p>
+        <p>
+            <strong>Practical Implication:</strong> The significant observed difference suggests that the factor tested may indeed influence missingness in a meaningful way. If related to something like the complexity of a recipe affecting user willingness to rate it, it implies practical considerations for data collection and analysis in understanding user behavior.
+        </p>
+        <p> 
+            <strong>Causation vs. Correlation:</strong> While the test indicates a statistically significant association, it does not confirm causation. The result suggests a strong correlation, but other unexamined factors could influence or confound this relationship.
         </p>
         <h3>Conclusion</h3>
         <p>
-            Based on the analysis, we reject the null hypothesis in favor of the alternative hypothesis, suggesting that cooking time does indeed appear to influence recipe ratings. However, it's important to note that while the test indicates a statistically significant association, it does not prove causation, nor does it account for all possible confounding factors.
+            The permutation test provides robust evidence that the tested factor (possibly complexity or other recipe characteristics) significantly affects the missingness of ratings. The result, supported by a p-value of 0.0 (likely truncated by the computer). I believe the p-value is very close to 0 and that we can successfully reject the null hypothesis in favor of the alternative hypothesis, suggesting that cooking time does indeed appear to influence recipe ratings. However, it's important to note that while the test indicates a statistically significant association, it does not prove causation, nor does it account for all possible confounding factors.
         </p>
-        <h3>Visualization of Results</h3>
-        <p>
-            Below is a scatter plot showing the relationship between cooking time and recipe ratings, with a regression line indicating the trend:
-        </p>
-        <!-- Embed visualization image if available -->
-        <iframe src="path_to_regression_plot.png" alt="Cooking Time vs. Recipe Ratings Regression Plot" width="800" height="600" frameborder="0"></iframe>
-        <figcaption>This plot visually supports the statistical test's findings, showing a trend where recipes with certain cooking times tend to receive specific ratings.</figcaption>
     </section>
 </body>
 
