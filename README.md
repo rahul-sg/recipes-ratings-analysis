@@ -34,10 +34,6 @@
     </section>
 </body>
 
-
-
-# recipes-ratings-analysis
-This repository contains a final project for the DSC 80 course at UC San Diego
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,19 +74,37 @@ This repository contains a final project for the DSC 80 course at UC San Diego
     </section>
 </body>
 
-Step 5:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Model for Recipe Ratings</title>
+</head>
+<body>
+    <header>
+        <h1>Predicting Recipe Ratings</h1>
+    </header>
+    <section>
+        <h2>Prediction Problem and Type</h2>
+        <p>
+            Our project aims to <strong>classify recipes into one of five rating categories</strong>, utilizing data available before the recipe is rated by users. This classification task is crucial for understanding user preferences and improving recipe recommendations.
+        </p>
+        <p>
+            The <strong>type of prediction</strong> is <em>multiclass classification</em>, suitable for predicting which of several rating categories (1 to 5 stars) a recipe will fall into based on its characteristics such as cook time, ingredients, and preparation steps.
+        </p>
+        <h2>Response Variable</h2>
+        <p>
+            The <strong>response variable</strong> in our model is the <em>'rating'</em> of a recipe, which is categorized into 1, 2, 3, 4, or 5 stars. This categorical approach allows for a precise classification of recipes into predefined quality levels, reflecting user satisfaction and preferences.
+        </p>
+        <h2>Evaluation Metric</h2>
+        <p>
+            To evaluate our model, we use two primary metrics: <strong>Accuracy</strong> and <strong>F1-Score</strong>. Accuracy measures the overall effectiveness of the classifier across all categories, providing a simple percentage of correctly predicted ratings.
+        </p>
+        <p>
+            However, due to potential imbalances among the rating categories, the <strong>F1-Score</strong> is also employed. It balances precision and recall, offering a more nuanced view of model performance especially important in handling the variance in category frequency. This metric is particularly useful for assessing the quality of the model in terms of both false positives and false negatives.
+        </p>
+    </section>
+</body>
 
-1. Prediction Problem and Type:
-
-Prediction Problem: The objective is to classify recipes into one of five rating categories based on available pre-rating information.
-Type of Prediction: Multiclass classification. This approach is apt for predicting which of the several rating categories a recipe will fall into based on its characteristics.
-2. Response Variable:
-
-Response Variable: The 'rating' of a recipe, categorized into 1, 2, 3, 4, or 5 stars. Using ratings as categorical data allows for precise classification into predefined quality levels.
-3. Evaluation Metric:
-
-Metric Choice: Accuracy and F1-Score. Accuracy will be the primary metric to determine the overall effectiveness of the classifier across all categories. However, given the likely imbalance among the categories (some ratings may be more common than others), the F1-Score, which balances precision and recall, will also be crucial.
-Comparison: While accuracy gives a straightforward percentage of correct predictions, F1-Score provides a better measure of the model's performance in terms of balancing false positives and false negatives, which is important in an unbalanced dataset.
 
 
 Step 6:
