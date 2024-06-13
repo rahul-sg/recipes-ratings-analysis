@@ -442,6 +442,8 @@
             <li>The model shows decent accuracy, suggesting it has a fair capability to generalize from the training data to unseen data. However, the F1-score is relatively lower, indicating potential issues with class imbalance or that the model is not equally effective across all rating classes.</li>
             <li>Given the complex nature of taste and recipe preferences, an accuracy of approximately 72.5% is reasonably good for a baseline model but leaves room for improvement, particularly in how it handles the balance between classes as indicated by the F1-score.</li>
         </ul>
+        </p>
+        <p>
         <strong>Improvement Considerations:</strong>
         <ul>
             <li>Enhancing the model could involve integrating more descriptive features that could influence recipe ratings, such as ingredient lists, nutritional information, or user-generated metadata like the number of reviews.</li>
