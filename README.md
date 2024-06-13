@@ -44,6 +44,8 @@
             The data cleaning process involved several key steps to prepare our dataset for analysis:
             <ul>
                 <li><strong>Handling Missing Data:</strong> Missing values in <code>cook_time</code> and <code>rating</code> were replaced with the median values of their respective columns to maintain data integrity without introducing bias. We used mean imputation to replace the correct missing values for numerical columns. <strong>Note:</strong> These were done after the MAR analysis.</li>
+                <li><strong>Handling datetimes:</strong> Converted the object values in <code>submitted</code> and <code>date</code> to pd.datetime objects.</li>
+                <li><strong>Melted <code>nutrition</code></strong> Extracted the list objects from <code>nutrition</code> column and made them separate variables in the dataframe.</li>
             </ul>
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
@@ -365,7 +367,7 @@
         <ul>
             <li><strong>Null Hypothesis (H0):</strong> There is no significant relationship between cooking time and recipe ratings; any observed association is due to random chance.</li>
             <li><strong>Alternative Hypothesis (H1):</strong> There is a significant relationship between cooking time and recipe ratings; longer or shorter cooking times influence the ratings received.</li>
-            <li><strong>Test Statistic: Total Variation Distance as we are comparing two categorical distributions: cook_time_category (True or False) and ratings (1-5)</strong></li>
+            <li><strong>Test Statistic:</strong> Total Variation Distance as we are comparing two categorical distributions: cook_time_category (True or False) and ratings (1-5)</strong></li>
         </ul>
         <p>
             <strong>Histogram Distribution:</strong> The histogram showcases the empirical distribution of the TVD from permutations, centered primarily between 0.001 and 0.003. This distribution implies that most shuffled datasets under the null hypothesis (which states that <code>cook_time_category</code> does not affect <code>average_rating</code>) did not exhibit substantial differences in the distribution of ratings between the groups. The distribution tapers off significantly towards higher values, indicating fewer instances where shuffled data showed larger differences.
