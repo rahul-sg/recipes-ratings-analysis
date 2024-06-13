@@ -175,8 +175,8 @@
         <p>
             Compared to the baseline model, which achieved an accuracy of 72.5% and an F1-score of 60.98%, our final model showed significant improvement:
             <ul>
-                <li><strong>Accuracy:</strong> Increased to 78.3%</li>
-                <li><strong>F1-Score:</strong> Improved to 67.45%</li>
+                <li><strong>Accuracy:</strong> Increased to 74.3%</li>
+                <li><strong>F1-Score:</strong> Improved to 62.45%</li>
             </ul>
             These improvements underscore the effectiveness of the feature engineering and refined model configuration in enhancing the predictive capabilities of our system.
         </p>
@@ -186,6 +186,55 @@
             <!-- Insert an image of the confusion matrix if applicable -->
             <img src="path_to_confusion_matrix_image.png" alt="Confusion Matrix" style="width:100%;max-width:600px;">
         </p>
+    </section>
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairness Analysis of Recipe Ratings</title>
+</head>
+<body>
+    <header>
+        <h1>Fairness Analysis in Recipe Ratings</h1>
+    </header>
+    <section>
+        <h2>Fairness Analysis Setup</h2>
+        <p>
+            To assess the fairness of our recipe rating prediction model, we analyzed the performance across two distinct groups:
+        </p>
+        <ul>
+            <li><strong>Group X (Quick Recipes):</strong> Recipes with a cook time of 40 minutes or less.</li>
+            <li><strong>Group Y (Lengthy Recipes):</strong> Recipes with a cook time greater than 40 minutes.</li>
+        </ul>
+        <h2>Evaluation Metric and Hypotheses</h2>
+        <p>
+            The evaluation metric used for this analysis is the <strong>F1-Score</strong>, which balances precision and recall, crucial for assessing model performance fairly across unbalanced groups.
+        </p>
+        <p>
+            <strong>Null Hypothesis (H0):</strong> The prediction model is fair, meaning there is no significant difference in the F1-Scores between Group X and Group Y.
+        </p>
+        <p>
+            <strong>Alternative Hypothesis (H1):</strong> The prediction model is unfair, meaning there is a significant difference in the F1-Scores between Group X and Group Y.
+        </p>
+        <h3>Statistical Analysis</h3>
+        <p>
+            We conducted a permutation test with the absolute difference in F1-Scores as the test statistic. A significance level of 0.05 was chosen to determine if the observed differences were statistically significant.
+        </p>
+        <p>
+            The resulting p-value was <strong>0.023</strong>, indicating a statistically significant difference in the F1-Scores between the two groups.
+        </p>
+        <h3>Conclusion</h3>
+        <p>
+            Based on the analysis, we reject the null hypothesis and conclude that the model performs differently for quick versus lengthy recipes, suggesting potential unfairness in how the model predicts ratings based on cooking time.
+        </p>
+        <h3>Visualization of Results</h3>
+        <p>
+            Below is a visualization representing the distribution of F1-Scores across the permutations conducted during the fairness analysis:
+        </p>
+        <img src="path_to_permutation_test_visualization.png" alt="Permutation Test Visualization" style="width:100%;max-width:600px;">
     </section>
 </body>
 
