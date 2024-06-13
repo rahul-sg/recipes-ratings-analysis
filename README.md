@@ -277,20 +277,33 @@
             <table border="1" class="dataframe">
             <thead>
                 <tr style="text-align: right;">
+                <th></th>
+                <th></th>
                 <th>rating</th>
+                </tr>
+                <tr>
+                <th>High Cook Time %</th>
+                <th>High Number of Steps %</th>
+                <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                <th rowspan="2" valign="top">False</th>
+                <th>False</th>
                 <td>4.70</td>
                 </tr>
                 <tr>
+                <th>True</th>
                 <td>4.68</td>
                 </tr>
                 <tr>
+                <th rowspan="2" valign="top">True</th>
+                <th>False</th>
                 <td>4.64</td>
                 </tr>
                 <tr>
+                <th>True</th>
                 <td>4.67</td>
                 </tr>
             </tbody>
