@@ -105,20 +105,41 @@
     </section>
 </body>
 
-
-
-Step 6:
-
-Model Description: The baseline model is a logistic regression classifier trained to predict the categorical ratings of recipes. It uses two types of features: one quantitative ('cook_time') and one nominal ('tags', which has been one-hot encoded).
-
-Performance Evaluation:
-
-  Metrics Used: Accuracy and F1-Score.
-
-  Performance Results: The model achieved an accuracy of 72.52911% and an F1-Score of 60.98069% on the test set (replace XX with actual values from the notebook output).
-
-  Assessment: The current model's performance can be considered a basic benchmark. The accuracy may provide a quick glance at how often the model predicts correctly, but the F1-Score is particularly valuable due to the potential class imbalance across different ratings. Depending on these metrics, the model’s effectiveness in a real-world scenario can be preliminary evaluated.
-This baseline model serves as a foundational step. It is straightforward, making it a good starting point for understanding basic relationships in the data before moving on to more complex models in the subsequent steps.
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseline Model for Recipe Ratings</title>
+</head>
+<body>
+    <header>
+        <h1>Baseline Model Analysis</h1>
+    </header>
+    <section>
+        <h2>Model Description</h2>
+        <p>
+            Our baseline model employs a <strong>logistic regression classifier</strong> to predict the categorical ratings of recipes, ranging from 1 to 5 stars. This model utilizes two main types of features: 
+            <ul>
+                <li><strong>Quantitative:</strong> 'cook_time' — the time required to prepare and cook the recipe.</li>
+                <li><strong>Nominal:</strong> 'tags' — various descriptors and categories associated with each recipe, which have been transformed using one-hot encoding to fit into the logistic regression framework.</li>
+            </ul>
+        </p>
+        <h2>Performance Evaluation</h2>
+        <p>
+            The performance of our baseline model is evaluated using two metrics:
+            <ul>
+                <li><strong>Accuracy:</strong> Reflects the overall rate at which the model correctly predicts the recipe ratings. Our model achieved an accuracy of <strong>72.52911%</strong>.</li>
+                <li><strong>F1-Score:</strong> Provides a balance between precision and recall, particularly important for managing class imbalance in the dataset. The F1-Score achieved was <strong>60.98069%</strong>.</li>
+            </ul>
+        </p>   
+        <h3>Assessment of Model Performance</h3>
+        <p>
+            The baseline model’s performance can be seen as a foundational benchmark. While the accuracy offers a quick overview of the model's ability to correctly predict ratings, the F1-Score is invaluable for its detailed insight into the balance between false positives and false negatives. These metrics together help in evaluating the model's potential utility in real-world scenarios, providing a preliminary indication of its effectiveness and areas for improvement.
+        </p>
+        <p>
+            This initial model sets the stage for further explorations and refinements in subsequent steps, aiming to enhance predictive accuracy and reliability through more sophisticated models and feature engineering techniques.
+        </p>
+    </section>
+</body>
 </html>
 
