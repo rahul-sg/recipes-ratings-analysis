@@ -45,7 +45,7 @@
             <ul>
                 <li><strong>Handling Missing Data:</strong> Missing values in <code>cook_time</code> and <code>rating</code> were replaced with the median values of their respective columns to maintain data integrity without introducing bias. We used mean imputation to replace the correct missing values for numerical columns. <strong>Note:</strong> These were done after the MAR analysis.</li>
                 <li><strong>Handling datetimes:</strong> Converted the object values in <code>submitted</code> and <code>date</code> to pd.datetime objects.</li>
-                <li><strong>Melted <code>nutrition</code></strong> Extracted the list objects from <code>nutrition</code> column and made them separate variables in the dataframe.</li>
+                <li><strong>Melted <code>nutrition:</code></strong> Extracted the list objects from <code>nutrition</code> column and made them separate variables in the dataframe.</li>
             </ul>
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
@@ -400,59 +400,47 @@
 
 <body>
     <header>
-        <h1>Framing a Prediction Problem</h1>
-    </header>
-    <section>
-        <h2>Prediction Problem and Type</h2>
-        <p>
-            Our project aims to <strong>classify recipes into one of five rating categories</strong>, utilizing data available before the recipe is rated by users. This classification task is crucial for understanding user preferences and improving recipe recommendations.
-        </p>
-        <p>
-            The <strong>type of prediction</strong> is <em>multiclass classification</em>, suitable for predicting which of several rating categories (1 to 5 stars) a recipe will fall into based on its characteristics such as cook time, ingredients, and preparation steps.
-        </p>
-        <h2>Response Variable</h2>
-        <p>
-            The <strong>response variable</strong> in our model is the <em>'rating'</em> of a recipe, which is categorized into 1, 2, 3, 4, or 5 stars. This categorical approach allows for a precise classification of recipes into predefined quality levels, reflecting user satisfaction and preferences.
-        </p>
-        <h2>Evaluation Metric</h2>
-        <p>
-            To evaluate our model, we use two primary metrics: <strong>Accuracy</strong> and <strong>F1-Score</strong>. Accuracy measures the overall effectiveness of the classifier across all categories, providing a simple percentage of correctly predicted ratings.
-        </p>
-        <p>
-            However, due to potential imbalances among the rating categories, the <strong>F1-Score</strong> is also employed. It balances precision and recall, offering a more nuanced view of model performance especially important in handling the variance in category frequency. This metric is particularly useful for assessing the quality of the model in terms of both false positives and false negatives.
-        </p>
-    </section>
-</body>
-
-<!-- Step 6 -->
-
-<body>
-    <header>
         <h1>Baseline Model Analysis</h1>
     </header>
     <section>
-        <h2>Model Description</h2>
+        <h2>Model Description and Features</h2>
         <p>
-            Our baseline model employs a <strong>logistic regression classifier</strong> to predict the categorical ratings of recipes, ranging from 1 to 5 stars. This model utilizes two main types of features: 
-            <ul>
-                <li><strong>Quantitative:</strong> 'cook_time' — the time required to prepare and cook the recipe.</li>
-                <li><strong>Nominal:</strong> 'tags' — various descriptors and categories associated with each recipe, which have been transformed using one-hot encoding to fit into the logistic regression framework.</li>
-            </ul>
+            The baseline model utilizes a logistic regression classifier configured within a pipeline that incorporates both data preprocessing and model training.
         </p>
-        <h2>Performance Evaluation</h2>
+        <ul>
+            <li><strong>Quantitative Features:</strong>
+                <ul>
+                    <li><code>cook_time</code> - A numerical feature, where missing values are imputed using the mean of this feature's available data.</li>
+                </ul>
+            </li>
+            <li><strong>Nominal Features:</strong>
+                <ul>
+                    <li><code>tags</code> - Includes categorical data processed with <code>OneHotEncoder</code> to convert categories into a format suitable for logistic regression, handling unknown categories by ignoring them.</li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Data Preprocessing</h2>
         <p>
-            The performance of our baseline model is evaluated using two metrics:
-            <ul>
-                <li><strong>Accuracy:</strong> Reflects the overall rate at which the model correctly predicts the recipe ratings. Our model achieved an accuracy of <strong>72.52911%</strong>.</li>
-                <li><strong>F1-Score:</strong> Provides a balance between precision and recall, particularly important for managing class imbalance in the dataset. The F1-Score achieved was <strong>60.98069%</strong>.</li>
-            </ul>
-        </p>   
-        <h3>Assessment of Model Performance</h3>
+            Data preprocessing is conducted using a <code>ColumnTransformer</code> to apply the appropriate transformations:
+        </p>
+        <ul>
+            <li><code>SimpleImputer</code> for <code>cook_time</code> handles missing values by substituting them with the column mean.</li>
+            <li><code>OneHotEncoder</code> for <code>tags</code> converts categorical data into a numerical format suitable for model training.</li>
+        </ul>
+        <h2>Model Performance</h2>
         <p>
-            The baseline model’s performance can be seen as a foundational benchmark. While the accuracy offers a quick overview of the model's ability to correctly predict ratings, the F1-Score is invaluable for its detailed insight into the balance between false positives and false negatives. These metrics together help in evaluating the model's potential utility in real-world scenarios, providing a preliminary indication of its effectiveness and areas for improvement.
+            The logistic regression model's performance is evaluated based on two key metrics:
+        </p>
+        <ul>
+            <li><strong>Accuracy:</strong> Achieved an accuracy of 72.52911%, indicating the model predicts correctly about 72.5% of the time.</li>
+            <li><strong>F1-Score:</strong> The weighted F1-score is 0.6098069085681512, reflecting the precision and recall balanced by the number of instances in each class.</li>
+        </ul>
+        <h2>Evaluation and Conclusion</h2>
+        <p>
+            While the model exhibits reasonable accuracy, it shows areas for improvement, especially in managing class balance as indicated by the F1-score.
         </p>
         <p>
-            This initial model sets the stage for further explorations and refinements in subsequent steps, aiming to enhance predictive accuracy and reliability through more sophisticated models and feature engineering techniques.
+            Considerations for enhancing the model include adding more descriptive features, experimenting with different classifiers, and tuning hyperparameters to improve predictive performance and handle class imbalances better.
         </p>
     </section>
 </body>
