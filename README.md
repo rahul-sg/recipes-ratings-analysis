@@ -34,6 +34,75 @@
     </section>
 </body>
 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning and Exploratory Data Analysis</title>
+</head>
+<body>
+    <header>
+        <h1>Data Cleaning and Exploratory Analysis</h1>
+    </header>
+    <section>
+        <h2>Data Cleaning</h2>
+        <p>
+            The data cleaning process involved several key steps to prepare our dataset for analysis:
+            <ul>
+                <li><strong>Handling Missing Data:</strong> Missing values in 'cook_time' and 'rating' were replaced with the median values of their respective columns to maintain data integrity without introducing bias.</li>
+                <li><strong>Creating New Columns:</strong> We derived a 'meal_type' column from the 'tags' column to categorize recipes into 'breakfast', 'lunch', 'dinner', and 'snack', enhancing our ability to analyze trends per meal type.</li>
+                <li><strong>Scaling Data:</strong> The 'calories' column was scaled using a logarithmic scale to reduce skewness and improve the model's performance.</li>
+            </ul>
+            Below is the head of the cleaned DataFrame:
+            <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
+            <img src="path_to_dataframe_head.png" alt="Head of Cleaned DataFrame">
+        </p>
+        <h2>Univariate Analysis</h2>
+        <p>
+            We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
+            <!-- Embed Plotly plot using an img tag if it's saved as an image -->
+            <img src="path_to_cook_time_distribution_plot.png" alt="Cook Time Distribution">
+            <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
+        </p>
+        <h2>Bivariate Analysis</h2>
+        <p>
+            We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
+            <!-- Embed another Plotly plot -->
+            <img src="path_to_cook_time_vs_rating_plot.png" alt="Cook Time vs. Rating">
+            <figcaption>This scatter plot suggests a weak positive correlation between cook time and rating, hinting that recipes requiring more time might be rated slightly higher, potentially due to complexity or taste factors.</figcaption>
+        </p>
+        <h2>Interesting Aggregates</h2>
+        <p>
+            We grouped the recipes by 'meal_type' and calculated the average 'rating' for each group to identify which type of meal generally receives higher ratings:
+            <!-- Embed a grouped table or pivot table -->
+            <table>
+                <tr>
+                    <th>Meal Type</th>
+                    <th>Average Rating</th>
+                </tr>
+                <tr>
+                    <td>Breakfast</td>
+                    <td>4.2</td>
+                </tr>
+                <tr>
+                    <td>Lunch</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td>4.3</td>
+                </tr>
+                <tr>
+                    <td>Snack</td>
+                    <td>3.9</td>
+                </tr>
+            </table>
+            <figcaption>This table shows that dinners tend to receive the highest average ratings, which could be useful for recipe creators focusing on meals that resonate well with users.</figcaption>
+        </p>
+    </section>
+</body>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,6 +143,7 @@
     </section>
 </body>
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,7 +175,7 @@
     </section>
 </body>
 
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +212,7 @@
     </section>
 </body>
 
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,8 +259,7 @@
     </section>
 </body>
 
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -237,6 +306,5 @@
         <img src="path_to_permutation_test_visualization.png" alt="Permutation Test Visualization" style="width:100%;max-width:600px;">
     </section>
 </body>
-
 </html>
 
