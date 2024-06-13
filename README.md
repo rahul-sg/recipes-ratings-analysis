@@ -3,9 +3,18 @@ This repository contains a final project for the DSC 80 course at UC San Diego
 
 Step 3:
 
-NMAR Analysis:
+Not Missing At Random (NMAR)
+NMAR occurs when the probability of missingness in a data point is related to the value of the missing data itself, possibly in conjunction with observed data. For example, if people do not rate recipes that are too complex or time-consuming, and complexity or time required is not recorded, the missingness in ratings is related to this unobserved complexity.
+
+In our dataset, examining columns like rating could reveal insights into NMAR. For instance:
+
+Rating: Missing ratings might not be random but related to users' dissatisfaction or disappointment. If a user attempts a recipe and it turns out poorly, they might opt not to rate it to avoid leaving a negative review. Alternatively, users might skip rating because the recipe was unremarkable. Both scenarios suggest that the missing ratings could depend on the satisfaction level, which is not observed in the dataset.
+
+Cook Time and Ingredients: Recipes with long cook times or requiring unusual ingredients might often go unrated. Users who plan but do not follow through with cooking such recipes (due to the high effort or ingredient unavailability) might not leave a rating. This missingness could also be NMAR if users avoid rating because they never attempted the recipe, influenced by the unobserved perceived difficulty or availability of ingredients.
+
 
 Statement on NMAR: In the context of our dataset, which includes various attributes of recipes like 'rating', 'cook_time', 'ingredients', etc., it is plausible to consider that some missingness, particularly in the 'rating' column, could be NMAR. This hypothesis arises from the possibility that users might choose not to rate recipes based on subjective experiences or biases that are not captured in the data. For instance, if a recipe is too complex or requires hard-to-find ingredients, users might not complete it and thus not leave a rating, and these factors are not directly recorded in the dataset.
+
 Reasoning: If users do not rate a recipe because they never attempted it, the missingness in 'rating' depends on unobserved factors related to the recipe's perceived complexity or ingredient accessibility. This kind of missingness would be NMAR as the likelihood of the data being missing depends on the unobserved data itself.
 Additional Data for MAR Conversion: To potentially convert this NMAR scenario into an MAR (Missing At Random) scenario, additional data could be collected on user engagement with the recipe page, such as time spent on the page, clicks on the ingredient list, or whether the user added the recipe to a collection or shopping list. Collecting data on whether the user has rated similar recipes (in terms of complexity or cuisine type) might also help explain the missingness.
 
