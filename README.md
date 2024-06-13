@@ -48,6 +48,7 @@
             </ul>
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
+            <div style="width:100%;overflow:scroll;">
             <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -216,6 +217,7 @@
     </tr>
   </tbody>
 </table>
+</div>
         </p>
         <h2>Univariate Analysis</h2>
         <p>
