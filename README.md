@@ -24,9 +24,9 @@
             <li><strong>Number of Rows:</strong> 234,429</li>
             <li><strong>Possibly Relevant Columns:</strong></li>
             <ul>
-                <li><strong>cook_time:</strong> The time required to prepare and cook the recipe, measured in minutes.</li>
-                <li><strong>average_rating:</strong> The average rating given to the recipe by users, on a scale from 1 to 5.</li>
-                <li><strong>tags:</strong> Categories and descriptors tagged to the recipe, such as 'vegetarian', 'quick-eats', etc.</li>
+                <li><strong><code>cook_time:</code></strong> The time required to prepare and cook the recipe, measured in minutes.</li>
+                <li><strong><code>average_rating:</code></strong> The average rating given to the recipe by users, on a scale from 1 to 5.</li>
+                <li><strong><code>tags:</code></strong> Categories and descriptors tagged to the recipe, such as 'vegetarian', 'quick-eats', etc.</li>
             </ul>
         </ul>
     </section>
@@ -43,9 +43,7 @@
         <p>
             The data cleaning process involved several key steps to prepare our dataset for analysis:
             <ul>
-                <li><strong>Handling Missing Data:</strong> Missing values in 'cook_time' and 'rating' were replaced with the median values of their respective columns to maintain data integrity without introducing bias.</li>
-                <li><strong>Creating New Columns:</strong> We derived a 'meal_type' column from the 'tags' column to categorize recipes into 'breakfast', 'lunch', 'dinner', and 'snack', enhancing our ability to analyze trends per meal type.</li>
-                <li><strong>Scaling Data:</strong> The 'calories' column was scaled using a logarithmic scale to reduce skewness and improve the model's performance.</li>
+                <li><strong>Handling Missing Data:</strong> Missing values in <code>cook_time</code> and <code>rating</code> were replaced with the median values of their respective columns to maintain data integrity without introducing bias. We used mean imputation to replace the correct missing values for numerical columns. <strong>Note:</strong> These were done after the MAR analysis.</li>
             </ul>
             Below is the head of the cleaned DataFrame:
             <!-- Embedding the head of DataFrame, ideally as an image or an HTML table -->
@@ -221,30 +219,30 @@
                 </div>
         </p>
         <h2>Univariate Analysis</h2>
-            <h3>'cook_time'</h3>
+            <h3><code>cook_time</code></h3>
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
                 <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="45ss0" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
-            <h3>'number_steps'</h3>
+            <h3><code>number_steps</code></h3>
             <p>
                 We examined the distribution of the 'number_steps' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
                 <iframe src="assets/univar2.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of the number of steps shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes having lesser steps to complete.</figcaption>
             </p>
-            <h3>'rating'</h3>
+            <h3><code>rating</code></h3>
             <p>
-                We examined the distribution of the 'rating' to understand how ratings are typically assigned for recips:
+                We examined the distribution of the <code>rating</code> to understand how ratings are typically assigned for recips:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
                 <iframe src="assets/univar3.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of ratings shows a left-skewed pattern, indicating that most recipes have pretty high ratings. One can infer that food is a comfort for many, which is why people are more compelled to rate them higher as opposed to goods from amazon or any other items purchased/made</figcaption>
             </p>
-            <h3>'average_rating'</h3>
+            <h3><code>average_rating</code></h3>
             <p>
-                We examined the distribution of the 'average_rating' to how ratings are distributed based on each recipe:
+                We examined the distribution of the <code>average_rating</code> to how ratings are distributed based on each recipe:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
                 <iframe src="assets/univar4.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of average ratings also shows a right-skewed pattern. In this case we can see that the 4 star rating is more common than the 5 star rating for the distribution of all ratings. This could suggest that a majority of ratings of a recipe are 4 stars as it is grouped by recipe here and not a total distribution. </figcaption>
@@ -252,14 +250,14 @@
         <h2>Bivariate Analysis</h2>
             <h3>Frequency of High and Low Cook Time for Each Rating (High/Low is Comparison to median)</h3>
             <p>
-                We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
+                We explored the relationship between <code>cook_time</code> and <code>rating</code> to see if longer cooking times correlate with higher ratings:
                 <!-- Embed another Plotly plot -->
                 <iframe src="assets/bivar1.html" alt="Cook Time vs. Rating" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>This scatter plot suggests a weak negative correlation between cook time and rating, hinting that recipes requiring more time might be rated slightly lower, potentially due to complexity or taste factors. Note: False means low cook time and True means higher cook times. A high cook time in this case is calculated by being greater than the median of the dataset (35.0 minutes in this case)</figcaption>
             </p>
             <h3>Frequency of High and Low Number of Steps for Each Rating (High/Low is Comparison to median)</h3>
             <p>
-                We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
+                We explored the relationship between <code>cook_time</code> and <code>average_rating</code> to see if longer cooking times correlate with higher ratings:
                 <!-- Embed another Plotly plot -->
                 <iframe src="assets/bivar2.html" alt="Number Steps vs. Rating" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>This scatter plot suggests a weak negative correlation between the number of steps and rating, hinting that recipes with more steps might be rated slightly lower, potentially due to complexity or taste factors. Note: False means low steps and True means higher step counts. A high step count in this case is calculated by being greater than the median of the dataset (9.0 minutes in this case)</figcaption>
@@ -345,10 +343,10 @@
             To potentially address this issue and better understand the missing data mechanism, we could consider the following:
         </p>
         <p>
-            The following graph represents the Empirical Distribution of the shuffled abs differences based on two columns that are potentially MAR: ratings and average_ratings
+            The following graph represents the Empirical Distribution of the shuffled abs differences based on two columns that are potentially MAR: <code>ratings</code> and <code>average_ratings</code>
             <!-- Embed another Plotly plot -->
             <iframe src="assets/missingness.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="450" frameborder="0"></iframe>
-            <figcaption>Based on the permutation test, the observed absolute difference in 'average_rating' between recipes with and without ratings is approximately 0.105. The p-value of 0.185 exceeds the common significance threshold of 0.05, indicating that there is not enough evidence to reject the null hypothesis at the 5% significance level. Consequently, we fail to reject the null hypothesis, suggesting that the observed difference could occur by random chance under the null conditions. Therefore, we do not have sufficient statistical evidence to conclude that the missingness in 'rating' is dependent on 'average_rating'.</figcaption>
+            <figcaption>Based on the permutation test, the observed absolute difference in <code>average_rating</code> between recipes with and without ratings is approximately 0.105. The p-value of 0.185 exceeds the common significance threshold of 0.05, indicating that there is not enough evidence to reject the null hypothesis at the 5% significance level. Consequently, we fail to reject the null hypothesis, suggesting that the observed difference could occur by random chance under the null conditions. Therefore, we do not have sufficient statistical evidence to conclude that the missingness in <code>rating</code> is dependent on <code>average_rating</code>.</figcaption>
         </p>
     </section>
 </body>
@@ -381,10 +379,7 @@
         <p>
         <!-- Embed another Plotly plot -->
             <iframe src="assets/hypothesis.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="450" frameborder="0"></iframe>
-            <figcaption><strong>Statistical Significance:</strong> A p-value of 0.0000 indicates that the observed difference is statistically significant. If the null hypothesis were true, indicating that the factor does not influence missingness, it would be very unlikely to observe such a difference purely by chance.</figcaption>
-        </p>
-        <p>   
-            <strong>Statistical Significance:</strong> With a p-value of 0.619, the test does not reach the threshold of statistical significance set at 0.05. This high p-value indicates that it's quite common (61.9% probability) to observe a TVD as large as or larger than 0.0014 simply by chance, under the null hypothesis. Therefore, there isn't enough statistical evidence to reject the null hypothesis.
+            <figcaption><strong>Statistical Significance:</strong> With a p-value of 0.619, the test does not reach the threshold of statistical significance set at 0.05. This high p-value indicates that it's quite common (61.9% probability) to observe a TVD as large as or larger than 0.0014 simply by chance, under the null hypothesis. Therefore, there isn't enough statistical evidence to reject the null hypothesis.</figcaption>
         </p>
         <p>
             <strong>Practical Implication:</strong> Given the p-value and the placement of the observed TVD within the histogram's distribution, there's no compelling evidence to suggest that the <code>cook_time_category</code> significantly impacts the <code>average_rating</code>. This outcome suggests that, at least based on this analysis, the length of cooking time may not be a determining factor in how recipes are rated, which could be important for stakeholders focusing on recipe development and marketing.
