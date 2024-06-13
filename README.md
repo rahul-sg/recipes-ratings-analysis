@@ -5,6 +5,9 @@
     <header>
         <h1>Welcome to Our Recipe Ratings Analysis!</h1>
         <h3>By: Rahul Sengupta</h3>
+        <p><strong>NOTE/IMPORTANT:</strong> I realized I accidentally turned in a much older version of the jupyter notebook on gradescope and was unable to resubmit the correct one
+        I have attached the correct one here: 
+        </p>
         <div></div>
     </header>
     <section>
@@ -225,7 +228,7 @@
             <p>
                 We examined the distribution of the 'cook_time' to understand how much time recipes typically require:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="45ss0" frameborder="0"></iframe>
+                <iframe src="assets/univar1.html" alt="Cook Time Distribution" width="800" height="450" frameborder="0"></iframe>
                 <figcaption>The distribution of cook times shows a right-skewed pattern, indicating that most recipes are designed to be quick, with fewer recipes taking longer times to prepare.</figcaption>
             </p>
             <h3><code>number_steps</code></h3>
@@ -367,31 +370,31 @@
         <ul>
             <li><strong>Null Hypothesis (H0):</strong> There is no significant relationship between cooking time and recipe ratings; any observed association is due to random chance.</li>
             <li><strong>Alternative Hypothesis (H1):</strong> There is a significant relationship between cooking time and recipe ratings; longer or shorter cooking times influence the ratings received.</li>
-            <li><strong>Test Statistic:</strong> Total Variation Distance as we are comparing two categorical distributions: cook_time_category (True or False) and ratings (1-5)</strong></li>
+            <li><strong>Test Statistic:</strong> Total Variation Distance as we are comparing two categorical distributions: cook_time_category (True or False) and ratings (1-5).</li>
         </ul>
         <p>
-            <strong>Histogram Distribution:</strong> The histogram showcases the empirical distribution of the TVD from permutations, centered primarily between 0.001 and 0.003. This distribution implies that most shuffled datasets under the null hypothesis (which states that <code>cook_time_category</code> does not affect <code>average_rating</code>) did not exhibit substantial differences in the distribution of ratings between the groups. The distribution tapers off significantly towards higher values, indicating fewer instances where shuffled data showed larger differences.
+            <strong>Histogram Distribution:</strong> The histogram showcases the empirical distribution of the TVD from permutations. This distribution implies that most shuffled datasets under the null hypothesis (which states that <code>cook_time_category</code> does not affect <code>average_rating</code>) exhibited only minor differences in the distribution of ratings between the groups.
         </p>
         <p>
-            After performing the correlation test, the resulting <strong>p-value</strong> was 0.000, indicating that the relationship between cooking time and ratings is statistically significant at the 5% level. (I believe the computer truncated a very small value close to 0 to 0.000)
+            The resulting <strong>p-value</strong> of 0.0 indicates that the relationship between cooking time and ratings is statistically significant, suggesting a strong departure from the null hypothesis at our 5% significance level.
         </p>
         <p>
-            <strong>Observed Difference:</strong> The observed TVD marked on the histogram is 0.0014, positioned well within the bulk of the distribution. This location suggests that the observed difference in the distribution of <code>average_rating</code> across the <code>cook_time_category</code> groups is not unusual compared to the differences seen in the shuffled data.
+            <strong>Observed Difference:</strong> The observed TVD of 0.02895 is notably higher than most of the differences observed in the shuffled data, supporting the alternative hypothesis that cooking time significantly influences recipe ratings.
         </p>
         <p>
-        <!-- Embed another Plotly plot -->
+            <!-- Embed another Plotly plot -->
             <iframe src="assets/hypothesis.html" alt="Empirical Distribution of the shuffled abs differences" width="800" height="450" frameborder="0"></iframe>
-            <figcaption><strong>Statistical Significance:</strong> With a p-value of 0.619, the test does not reach the threshold of statistical significance set at 0.05. This high p-value indicates that it's quite common (61.9% probability) to observe a TVD as large as or larger than 0.0014 simply by chance, under the null hypothesis. Therefore, there isn't enough statistical evidence to reject the null hypothesis.</figcaption>
+            <figcaption><strong>Statistical Significance:</strong> With a p-value of 0.0, we reject the null hypothesis. This result indicates that the observed difference in TVD is highly unlikely to occur by chance, pointing to a significant impact of cooking time on recipe ratings.</figcaption>
         </p>
         <p>
-            <strong>Practical Implication:</strong> Given the p-value and the placement of the observed TVD within the histogram's distribution, there's no compelling evidence to suggest that the <code>cook_time_category</code> significantly impacts the <code>average_rating</code>. This outcome suggests that, at least based on this analysis, the length of cooking time may not be a determining factor in how recipes are rated, which could be important for stakeholders focusing on recipe development and marketing.
+            <strong>Practical Implication:</strong> This statistically significant finding suggests that cooking time is a determinant factor in how recipes are rated. Stakeholders focusing on recipe development and marketing might consider these findings to enhance user satisfaction and engagement.
         </p>
-        <p> 
-            <strong>Causation vs. Correlation:</strong> The analysis does not establish causation; it merely assesses correlation within the scope of the tested data. The lack of a statistically significant result here underscores the importance of considering other variables or employing different analytical approaches to fully understand what influences recipe ratings.
+        <p>
+            <strong>Causation vs. Correlation:</strong> While our test indicates a significant correlation, it does not establish causation. Further research could explore other contributing factors or experimental designs to better understand the causative impacts of cooking time on ratings.
         </p>
         <h3>Conclusion</h3>
         <p>
-            The permutation test examining the influence of cook time on average recipe ratings reveals no statistically significant association, with the observed differences likely attributable to random variation within the dataset. we fail to reject the null hypothesis here. The p-value of 0.619 indicates that there is no statistically significant evidence to suggest that the distribution of <code>average_rating</code> across different <code>cook_time_category</code> groups differs more than would be expected by chance. This suggests that other factors might be more influential in affecting recipe ratings, or that the dataset and method used are not sensitive enough to detect an existing effect. 
+            The hypothesis testing conducted provides robust evidence that cooking time has a statistically significant impact on the ratings recipes receive, effectively rejecting the null hypothesis. This finding encourages further investigation into how cooking time and possibly other related factors influence user perceptions and ratings of recipes.
         </p>
     </section>
 </body>
@@ -480,7 +483,7 @@
         <p>
             Compared to the baseline model, which achieved an accuracy of 72.5% and an F1-score of 60.98%, our final model showed improvement in accuracy:
             <ul>
-                <li><strong>Accuracy:</strong> Increased to 72.3968%<</li>
+                <li><strong>Accuracy:</strong> Increased to 72.3968%</li>
                 <li><strong>F1-Score:</strong> Slightly decreased to 60.805%</li>
             </ul>
         </p>
@@ -539,7 +542,7 @@
 
 <body>
     <header>
-        <h1>Fairness Analysis of the Recipe Rating Prediction Model</h1>
+        <h1>Conclusion</h1>
     </header>
     <section>
         <p>
