@@ -245,43 +245,59 @@
             <p>
                 We examined the distribution of the 'average_rating' to how ratings are distributed based on each recipe:
                 <!-- Embed Plotly plot using an img tag if it's saved as an image -->
-                <iframe src="assets/univar.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
+                <iframe src="assets/univar4.html" alt="Cook Time Distribution" width="800" height="600" frameborder="0"></iframe>
                 <figcaption>The distribution of average ratings also shows a right-skewed pattern. In this case we can see that the 4 star rating is more common than the 5 star rating for the distribution of all ratings. This could suggest that a majority of ratings of a recipe are 4 stars as it is grouped by recipe here and not a total distribution. </figcaption>
             </p>
         <h2>Bivariate Analysis</h2>
-        <p>
-            We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
-            <!-- Embed another Plotly plot -->
-            <iframe src="path_to_cook_time_vs_rating_plot.png" alt="Cook Time vs. Rating" width="800" height="600" frameborder="0"></iframe>
-            <figcaption>This scatter plot suggests a weak positive correlation between cook time and rating, hinting that recipes requiring more time might be rated slightly higher, potentially due to complexity or taste factors.</figcaption>
-        </p>
+            <h3>Frequency of High and Low Cook Time for Each Rating (High/Low is Comparison to median)</h3>
+            <p>
+                We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
+                <!-- Embed another Plotly plot -->
+                <iframe src="assets/bivar1.html" alt="Cook Time vs. Rating" width="800" height="400" frameborder="0"></iframe>
+                <figcaption>This scatter plot suggests a weak negative correlation between cook time and rating, hinting that recipes requiring more time might be rated slightly lower, potentially due to complexity or taste factors. Note: False means low cook time and True means higher cook times. A high cook time in this case is calculated by being greater than the median of the dataset (35.0 minutes in this case)</figcaption>
+            </p>
+            <h3>Frequency of High and Low Number of Steps for Each Rating (High/Low is Comparison to median)</h3>
+            <p>
+                We explored the relationship between 'cook_time' and 'rating' to see if longer cooking times correlate with higher ratings:
+                <!-- Embed another Plotly plot -->
+                <iframe src="assets/bivar2.html" alt="Number Steps vs. Rating" width="800" height="400" frameborder="0"></iframe>
+                <figcaption>This scatter plot suggests a weak negative correlation between the number of steps and rating, hinting that recipes with more steps might be rated slightly lower, potentially due to complexity or taste factors. Note: False means low steps and True means higher step counts. A high step count in this case is calculated by being greater than the median of the dataset (9.0 minutes in this case)</figcaption>
+            </p>
         <h2>Interesting Aggregates</h2>
         <p>
-            We grouped the recipes by 'meal_type' and calculated the average 'rating' for each group to identify which type of meal generally receives higher ratings:
+            We grouped the recipes by whether they have a 'High Cook Time' and 'High Number of Steps', calculated using the median values as thresholds. The average 'rating' for each group was then computed to identify how these factors influence user ratings:
+            <ul>
+                <li><strong>High Cook Time %:</strong> This is a Boolean condition that classifies recipes into those with a cook time greater than the median (True) and those with a cook time less than or equal to the median (False).
+                </li>
+                <li><strong>High Number of Steps %:</strong> Similar to cook time, this Boolean condition classifies recipes based on whether the number of steps is greater than the median (True) or not (False).
+                </li>
+            </ul>
+            The resulting pivot table shows the mean ratings for recipes based on these classifications, allowing us to see whether recipes that are more time-consuming or complex (in terms of steps) receive higher or lower average ratings compared to their simpler counterparts.
             <!-- Embed a grouped table or pivot table -->
-            <table>
+            <table border="1" class="dataframe">
+            <thead>
+                <tr style="text-align: right;">
+                <th>rating</th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
-                    <th>Meal Type</th>
-                    <th>Average Rating</th>
+                <td>4.70</td>
                 </tr>
                 <tr>
-                    <td>Breakfast</td>
-                    <td>4.2</td>
+                <td>4.68</td>
                 </tr>
                 <tr>
-                    <td>Lunch</td>
-                    <td>4.0</td>
+                <td>4.64</td>
                 </tr>
                 <tr>
-                    <td>Dinner</td>
-                    <td>4.3</td>
+                <td>4.67</td>
                 </tr>
-                <tr>
-                    <td>Snack</td>
-                    <td>3.9</td>
-                </tr>
+            </tbody>
             </table>
-            <figcaption>This table shows that dinners tend to receive the highest average ratings, which could be useful for recipe creators focusing on meals that resonate well with users.</figcaption>
+            <figcaption>The data suggests a nuanced relationship between recipe complexity (in terms of cook time and steps) and user ratings. Simpler recipes receive the highest ratings, which could be due to the ease and convenience they offer. However, when complexity is necessary, having recipes that are engaging or yield better results (potentially indicated by more steps) may lead to slightly better ratings than recipes that are merely time-consuming without added engagement.
+            This analysis implies that recipe developers might want to consider balancing complexity and time investment to optimize user satisfaction and ratings. Further statistical testing could confirm if these differences are significant and explore other factors that might influence ratings.
+            </figcaption>
         </p>
     </section>
 </body>
