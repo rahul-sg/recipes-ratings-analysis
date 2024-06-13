@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,30 +33,50 @@
         </ul>
     </section>
 </body>
-</html>
 
 
 
 # recipes-ratings-analysis
 This repository contains a final project for the DSC 80 course at UC San Diego
-
-Step 3:
-
-Not Missing At Random (NMAR)
-NMAR occurs when the probability of missingness in a data point is related to the value of the missing data itself, possibly in conjunction with observed data. For example, if people do not rate recipes that are too complex or time-consuming, and complexity or time required is not recorded, the missingness in ratings is related to this unobserved complexity.
-
-In our dataset, examining columns like rating could reveal insights into NMAR. For instance:
-
-Rating: Missing ratings might not be random but related to users' dissatisfaction or disappointment. If a user attempts a recipe and it turns out poorly, they might opt not to rate it to avoid leaving a negative review. Alternatively, users might skip rating because the recipe was unremarkable. Both scenarios suggest that the missing ratings could depend on the satisfaction level, which is not observed in the dataset.
-
-Cook Time and Ingredients: Recipes with long cook times or requiring unusual ingredients might often go unrated. Users who plan but do not follow through with cooking such recipes (due to the high effort or ingredient unavailability) might not leave a rating. This missingness could also be NMAR if users avoid rating because they never attempted the recipe, influenced by the unobserved perceived difficulty or availability of ingredients.
-
-
-Statement on NMAR: In the context of our dataset, which includes various attributes of recipes like 'rating', 'cook_time', 'ingredients', etc., it is plausible to consider that some missingness, particularly in the 'rating' column, could be NMAR. This hypothesis arises from the possibility that users might choose not to rate recipes based on subjective experiences or biases that are not captured in the data. For instance, if a recipe is too complex or requires hard-to-find ingredients, users might not complete it and thus not leave a rating, and these factors are not directly recorded in the dataset.
-
-Reasoning: If users do not rate a recipe because they never attempted it, the missingness in 'rating' depends on unobserved factors related to the recipe's perceived complexity or ingredient accessibility. This kind of missingness would be NMAR as the likelihood of the data being missing depends on the unobserved data itself.
-Additional Data for MAR Conversion: To potentially convert this NMAR scenario into an MAR (Missing At Random) scenario, additional data could be collected on user engagement with the recipe page, such as time spent on the page, clicks on the ingredient list, or whether the user added the recipe to a collection or shopping list. Collecting data on whether the user has rated similar recipes (in terms of complexity or cuisine type) might also help explain the missingness.
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMAR Analysis in Recipe Ratings</title>
+</head>
+<body>
+    <header>
+        <h1>Understanding NMAR in Recipe Ratings</h1>
+    </header>
+    <section>
+        <h2>What is NMAR?</h2>
+        <p>
+            Not Missing At Random (NMAR) refers to a scenario where the missingness in the dataset is related to the actual missing values themselves, possibly along with other observed data. This phenomenon can lead to biased analyses if not properly addressed, as it suggests that the absence of data is systematically related to unobserved factors.
+        </p>
+        <h2>Examples of NMAR in Our Dataset</h2>
+        <p>
+            In the context of our recipe dataset, NMAR might be observed in several ways:
+        </p>
+        <ul>
+            <li><strong>Rating:</strong> Missing ratings could indicate a user's dissatisfaction or disinterest, where a user might avoid rating a recipe due to poor outcomes or mediocre experiences. Such missingness is linked to the unobserved satisfaction level, influencing whether a rating is provided.</li>
+            <li><strong>Cook Time and Ingredients:</strong> Recipes requiring extensive preparation or hard-to-find ingredients may often go unrated. Users may refrain from rating because they never actually attempted to cook the recipe, influenced by the perceived complexity or ingredient scarcity.</li>
+        </ul>
+        <h2>Implications of NMAR in the Dataset</h2>
+        <p>
+            Recognizing NMAR is crucial because it influences how we interpret the completeness and reliability of the dataset. For example, if complex recipes are less likely to be rated, analyses that do not account for this may inaccurately reflect user preferences or recipe quality.
+        </p>
+        <h2>Addressing NMAR</h2>
+        <p>
+            To potentially address this issue and better understand the missing data mechanism, we could consider the following approaches:
+        </p>
+        <ul>
+            <li>Collecting additional data on user engagement, such as time spent on the recipe page, interactions with the ingredient list, or bookmarking activity.</li>
+            <li>Gathering information on user behavior regarding similar recipes to identify patterns or biases in rating habits related to recipe complexity or ingredient availability.</li>
+        </ul> 
+        <p>
+            Such additional data could help convert scenarios from NMAR to Missing At Random (MAR), allowing for more robust statistical inferences.
+        </p>
+    </section>
+</body>
 
 Step 5:
 
@@ -86,4 +105,6 @@ Performance Evaluation:
 
   Assessment: The current model's performance can be considered a basic benchmark. The accuracy may provide a quick glance at how often the model predicts correctly, but the F1-Score is particularly valuable due to the potential class imbalance across different ratings. Depending on these metrics, the model’s effectiveness in a real-world scenario can be preliminary evaluated.
 This baseline model serves as a foundational step. It is straightforward, making it a good starting point for understanding basic relationships in the data before moving on to more complex models in the subsequent steps.
+
+</html>
 
