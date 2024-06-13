@@ -5,8 +5,7 @@
     <header>
         <h1>Welcome to Our Recipe Ratings Analysis!</h1>
         <h3>By: Rahul Sengupta</h3>
-        <p><strong>NOTE/IMPORTANT:</strong> I realized I accidentally turned in a much older version of the jupyter notebook on gradescope and was unable to resubmit the correct one
-        I have attached the correct one here: 
+        <p><strong>NOTE/IMPORTANT:</strong> I realized I accidentally turned in a much older version of the jupyter notebook on gradescope and was unable to resubmit the correct one. I have attached the correct one here: <a href="https://drive.google.com/file/d/1Ix78cb1pzv-Hwz1fByV03q1hxfLMdN-A/view?usp=share_link"> <strong>Here</strong></a>
         </p>
         <div></div>
     </header>
@@ -379,7 +378,7 @@
             The resulting <strong>p-value</strong> of 0.0 indicates that the relationship between cooking time and ratings is statistically significant, suggesting a strong departure from the null hypothesis at our 5% significance level.
         </p>
         <p>
-            <strong>Observed Difference:</strong> The observed TVD of 0.02895 is notably higher than most of the differences observed in the shuffled data, supporting the alternative hypothesis that cooking time significantly influences recipe ratings.
+            <strong>Observed Difference:</strong> The observed TVD of 0.0014 is notably higher than most of the differences observed in the shuffled data, supporting the alternative hypothesis that cooking time significantly influences recipe ratings.
         </p>
         <p>
             <!-- Embed another Plotly plot -->
