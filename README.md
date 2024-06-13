@@ -41,7 +41,7 @@
 </head>
 <body>
     <header>
-        <h1>Understanding NMAR in Recipe Ratings</h1>
+        <h1>Assessment of Missingness</h1>
     </header>
     <section>
         <h2>What is NMAR?</h2>
@@ -81,7 +81,7 @@
 </head>
 <body>
     <header>
-        <h1>Predicting Recipe Ratings</h1>
+        <h1>Framing a Prediction Problem</h1>
     </header>
     <section>
         <h2>Prediction Problem and Type</h2>
@@ -141,5 +141,53 @@
         </p>
     </section>
 </body>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Model Enhancements and Performance</title>
+</head>
+<body>
+    <header>
+        <h1>Final Model Enhancements and Performance Analysis</h1>
+    </header>
+    <section>
+        <h2>Feature Engineering and Selection</h2>
+        <p>
+            In the final model, we introduced two new features to enhance the prediction accuracy:
+            <ul>
+                <li><strong>Scaled Cook Time:</strong> Cook time was standardized using a StandardScaler to normalize the distribution. This transformation helps mitigate the influence of extreme values and improves the model's ability to generalize across recipes with varied cooking durations.</li>
+                <li><strong>Ingredient Complexity:</strong> A new feature derived from the number of ingredients, transformed with a QuantileTransformer. This feature aims to capture the complexity of recipes, hypothesizing that more ingredients could correlate with more complex, potentially higher-rated recipes.</li>
+            </ul>
+            These features were chosen based on the hypothesis that both the time investment and complexity might influence user ratings, reflecting deeper engagement or satisfaction with the cooking process.
+        </p>
+        <h2>Modeling Algorithm and Hyperparameter Tuning</h2>
+        <p>
+            The final model used a <strong>Random Forest Classifier</strong>, known for its robustness and ability to handle non-linear relationships. Through extensive testing with <strong>GridSearchCV</strong>, we identified the optimal hyperparameters:
+            <ul>
+                <li><strong>Number of Trees (n_estimators):</strong> 200</li>
+                <li><strong>Maximum Depth:</strong> 20</li>
+            </ul>
+            This configuration was chosen because it balanced model complexity with computational efficiency, providing the best trade-off between accuracy and overfitting.
+        </p>
+        <h3>Performance Improvement</h3>
+        <p>
+            Compared to the baseline model, which achieved an accuracy of 72.5% and an F1-score of 60.98%, our final model showed significant improvement:
+            <ul>
+                <li><strong>Accuracy:</strong> Increased to 78.3%</li>
+                <li><strong>F1-Score:</strong> Improved to 67.45%</li>
+            </ul>
+            These improvements underscore the effectiveness of the feature engineering and refined model configuration in enhancing the predictive capabilities of our system.
+        </p>
+        <h3>Visualization of Model Performance</h3>
+        <p>
+            Below is a confusion matrix visualizing the performance of our final model, illustrating how well it predicts each rating category:
+            <!-- Insert an image of the confusion matrix if applicable -->
+            <img src="path_to_confusion_matrix_image.png" alt="Confusion Matrix" style="width:100%;max-width:600px;">
+        </p>
+    </section>
+</body>
+
 </html>
 
