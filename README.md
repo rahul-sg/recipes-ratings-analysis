@@ -42,7 +42,7 @@ Performance Evaluation:
 
 Metrics Used: Accuracy and F1-Score.
 
-Performance Results: The model achieved an accuracy of XX% and an F1-Score of XX% on the test set (replace XX with actual values from the notebook output).
+Performance Results: The model achieved an accuracy of 72.52911% and an F1-Score of 60.98069% on the test set (replace XX with actual values from the notebook output).
 
 Assessment: The current model's performance can be considered a basic benchmark. The accuracy may provide a quick glance at how often the model predicts correctly, but the F1-Score is particularly valuable due to the potential class imbalance across different ratings. Depending on these metrics, the model’s effectiveness in a real-world scenario can be preliminary evaluated.
 This baseline model serves as a foundational step. It is straightforward, making it a good starting point for understanding basic relationships in the data before moving on to more complex models in the subsequent steps.
