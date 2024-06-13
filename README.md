@@ -11,18 +11,16 @@
     </header>
     <section>
         <h2>Introduction to the Dataset</h2>
-        <p>
-            Our dataset comprises a comprehensive collection of culinary recipes, each accompanied by user ratings and various attributes that describe the preparation and nutritional content. This rich dataset provides a unique opportunity to explore what factors influence how recipes are perceived and rated by users.
-        </p>
-        <p>
-            Why is this important? Understanding these factors can help recipe creators tailor their recipes to meet user expectations better, enhance the culinary experience, and potentially increase user engagement on cooking and recipe-sharing platforms.
-        </p>
-
+            <p>
+                Our dataset comprises a comprehensive collection of culinary recipes, each accompanied by user ratings and various attributes that describe the preparation and nutritional content. This rich dataset provides a unique opportunity to explore what factors influence how recipes are perceived and rated by users.
+            </p>
+            <p>
+                Why is this important? Understanding these factors can help recipe creators tailor their recipes to meet user expectations better, enhance the culinary experience, and potentially increase user engagement on cooking and recipe-sharing platforms.
+            </p>
         <h2>Our Central Question</h2>
         <p>
             <strong>What is the relationship between cooking time and the average rating of recipes?</strong> This question seeks to uncover whether shorter or longer cooking times influence the user ratings recipes receive, providing insights that could influence how recipes are developed and presented.
         </p>
-
         <h3>Dataset Overview</h3>
         <ul>
             <li><strong>Number of Rows:</strong> 234,429</li>
