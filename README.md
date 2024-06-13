@@ -1,3 +1,5 @@
+<!-- Introduction -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +36,7 @@
     </section>
 </body>
 
+<!-- Step 2 -->
 
 <head>
     <meta charset="UTF-8">
@@ -102,6 +105,7 @@
     </section>
 </body>
 
+<!-- Step 3 -->
 
 <head>
     <meta charset="UTF-8">
@@ -143,6 +147,7 @@
     </section>
 </body>
 
+<!-- Step 5 -->
 
 <head>
     <meta charset="UTF-8">
@@ -175,6 +180,7 @@
     </section>
 </body>
 
+<!-- Step 6 -->
 
 <head>
     <meta charset="UTF-8">
@@ -212,6 +218,7 @@
     </section>
 </body>
 
+<!-- Step 7 -->
 
 <head>
     <meta charset="UTF-8">
@@ -259,6 +266,7 @@
     </section>
 </body>
 
+<!-- Step 8 -->
 
 <head>
     <meta charset="UTF-8">
