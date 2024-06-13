@@ -457,86 +457,94 @@
 
 <body>
     <header>
-        <h1>Final Model Enhancements and Performance Analysis</h1>
+        <h1>Final Model Performance and Setup</h1>
     </header>
     <section>
-        <h2>Feature Engineering and Selection</h2>
+        <h2>Features and Rationale</h2>
         <p>
-            In the final model, we introduced two new features to enhance the prediction accuracy:
-            <ul>
-                <li><strong>Scaled Cook Time:</strong> Cook time was standardized using a StandardScaler to normalize the distribution. This transformation helps mitigate the influence of extreme values and improves the model's ability to generalize across recipes with varied cooking durations.</li>
-                <li><strong>Ingredient Complexity:</strong> A new feature derived from the number of ingredients, transformed with a QuantileTransformer. This feature aims to capture the complexity of recipes, hypothesizing that more ingredients could correlate with more complex, potentially higher-rated recipes.</li>
-            </ul>
-            These features were chosen based on the hypothesis that both the time investment and complexity might influence user ratings, reflecting deeper engagement or satisfaction with the cooking process.
+            The final model includes a mix of quantitative and transformed features: <code>'cook_time'</code>, <code>'number_steps'</code>, <code>'calories'</code>, <code>'sugar_PDV'</code>, <code>'sat_fat_PDV'</code>, and <code>'n_ingredients'</code>. These features were chosen based on their relevance to the nutritional content and preparation complexity of recipes, which are hypothesized to influence user ratings. Quantitative features like <code>'calories'</code> and <code>'sugar_PDV'</code> reflect nutritional aspects that might affect user preferences, while <code>'n_ingredients'</code> and <code>'number_steps'</code> offer insights into the complexity of the recipe. The quantile transformation of <code>'n_ingredients'</code> normalizes its distribution, enhancing model sensitivity to variations in recipe complexity.
         </p>
         <h2>Modeling Algorithm and Hyperparameter Tuning</h2>
         <p>
             The final model used a <strong>Random Forest Classifier</strong>, known for its robustness and ability to handle non-linear relationships. Through extensive testing with <strong>GridSearchCV</strong>, we identified the optimal hyperparameters:
             <ul>
-                <li><strong>Number of Trees (n_estimators):</strong> 200</li>
-                <li><strong>Maximum Depth:</strong> 20</li>
+                <li><strong>Number of Trees (<code>n_estimators</code>):</strong> 50</li>
+                <li><strong>Maximum Depth (<code>max_depth</code>):</strong> 10</li>
             </ul>
             This configuration was chosen because it balanced model complexity with computational efficiency, providing the best trade-off between accuracy and overfitting.
         </p>
-        <h3>Performance Improvement</h3>
         <p>
-            Compared to the baseline model, which achieved an accuracy of 72.5% and an F1-score of 60.98%, our final model showed significant improvement:
-            <ul>
-                <li><strong>Accuracy:</strong> Increased to 74.3%</li>
-                <li><strong>F1-Score:</strong> Improved to 62.45%</li>
-            </ul>
-            These improvements underscore the effectiveness of the feature engineering and refined model configuration in enhancing the predictive capabilities of our system.
+            The final model's configuration, including a preprocessor with scaling and quantile transformations, was finalized into a pipeline ensuring streamlined preprocessing and classification processes.
         </p>
-        <h3>Visualization of Model Performance</h3>
+        <h2>Performance Improvement</h2>
         <p>
-            Below is a confusion matrix visualizing the performance of our final model, illustrating how well it predicts each rating category:
-            <!-- Insert an image of the confusion matrix if applicable -->
-            <iframe src="path_to_confusion_matrix_image.png" alt="Confusion Matrix" width="800" height="600" frameborder="0"></iframe>
+            Compared to the baseline model, which achieved an accuracy of 72.5% and an F1-score of 60.98%, our final model showed improvement in accuracy:
+            <ul>
+                <li><strong>Accuracy:</strong> Increased to 72.3968%<</li>
+                <li><strong>F1-Score:</strong> Slightly decreased to 60.805%</li>
+            </ul>
+        </p>
+        <p>
+            These metrics illustrate the effectiveness of the feature engineering and hyperparameter tuning strategies in enhancing the model's predictive accuracy and its ability to balance precision and recall across different rating classes.
         </p>
     </section>
 </body>
+
 
 <!-- Step 8 -->
 
 <body>
     <header>
-        <h1>Fairness Analysis in Recipe Ratings</h1>
+        <h1>Fairness Analysis of the Recipe Rating Prediction Model</h1>
     </header>
     <section>
-        <h2>Fairness Analysis Setup</h2>
+        <h2>Analysis Setup</h2>
         <p>
-            To assess the fairness of our recipe rating prediction model, we analyzed the performance across two distinct groups:
+            For the fairness analysis, we divided the recipes into two groups based on their complexity:
+            <ul>
+                <li><strong>Group X - Simple Recipes:</strong> Recipes with ingredients below the median count.</li>
+                <li><strong>Group Y - Complex Recipes:</strong> Recipes with ingredients above the median count.</li>
+            </ul>
         </p>
+        <p>
+            We used <strong>precision</strong> as the evaluation metric, calculated with a weighted average to handle multiclass outputs effectively and set <code>zero_division</code> to 0 to address undefined precision values.
+        </p>
+        <h2>Hypotheses</h2>
         <ul>
-            <li><strong>Group X (Quick Recipes):</strong> Recipes with a cook time of 40 minutes or less.</li>
-            <li><strong>Group Y (Lengthy Recipes):</strong> Recipes with a cook time greater than 40 minutes.</li>
+            <li><strong>Null Hypothesis (H0):</strong> The model is fair, meaning the precision for both simple and complex recipes is roughly the same, and any differences are due to random chance.</li>
+            <li><strong>Alternative Hypothesis (H1):</strong> The model is unfair, meaning the precision differs significantly between simple and complex recipes.</li>
         </ul>
-        <h2>Evaluation Metric and Hypotheses</h2>
+        <h2>Permutation Test</h2>
         <p>
-            The evaluation metric used for this analysis is the <strong>F1-Score</strong>, which balances precision and recall, crucial for assessing model performance fairly across unbalanced groups.
+            A permutation test was performed to evaluate the fairness hypothesis, using the absolute difference in precision between the two groups as the test statistic. We calculated this statistic 1,000 times with shuffled group labels to simulate the distribution under the null hypothesis.
         </p>
         <p>
-            <strong>Null Hypothesis (H0):</strong> The prediction model is fair, meaning there is no significant difference in the F1-Scores between Group X and Group Y.
+            <strong>Significance Level:</strong> 0.05
         </p>
         <p>
-            <strong>Alternative Hypothesis (H1):</strong> The prediction model is unfair, meaning there is a significant difference in the F1-Scores between Group X and Group Y.
+            <strong>Resulting P-value:</strong> 0.815
         </p>
-        <h3>Statistical Analysis</h3>
+        <h2>Conclusion</h2>
         <p>
-            We conducted a permutation test with the absolute difference in F1-Scores as the test statistic. A significance level of 0.05 was chosen to determine if the observed differences were statistically significant.
+            The p-value from the permutation test is <strong>0.815</strong>, which is significantly higher than our significance level of 0.05. Therefore, <strong>no significant unfairness was detected between simple and complex recipes</strong>. This suggests that any observed differences in precision between the groups can likely be attributed to random variation rather than systematic bias.
         </p>
+        <!-- Optional: Embed a visualization related to your permutation test in your website -->
+        <h3>Visualization of Test Results</h3>
         <p>
-            The resulting p-value was <strong>0.023</strong>, indicating a statistically significant difference in the F1-Scores between the two groups.
+            <iframe src="assets/fairness.html" alt="Permutation Test Results for Model Fairness" width="800" height="450" frameborder="0"></iframe>
+            <figcaption>Here we see the results of a permutation test conducted to evaluate model fairness in predicting recipe ratings. The bars represent the frequency of differences in precision observed when the labels between two groups (simple vs. complex recipes) are randomly shuffled. The vertical dashed red line, indicating the observed difference of 0.0015 in precision between the two groups without shuffling, falls well within the central distribution of the permuted outcomes, suggesting that the difference observed in model performance is likely due to random chance rather than systematic bias.</figcaption>
         </p>
-        <h3>Conclusion</h3>
+    </section>
+</body>
+
+<body>
+    <header>
+        <h1>Fairness Analysis of the Recipe Rating Prediction Model</h1>
+    </header>
+    <section>
         <p>
-            Based on the analysis, we reject the null hypothesis and conclude that the model performs differently for quick versus lengthy recipes, suggesting potential unfairness in how the model predicts ratings based on cooking time.
+            In conclusion, this project has thoroughly investigated the relationship between recipe characteristics and their ratings through various analytical steps, including data cleaning, exploratory data analysis, model building, and fairness evaluation. The baseline and final models developed offered insights into how different features such as cook time and number of ingredients influence recipe ratings. Permutation tests for missingness and fairness analysis revealed no significant biases or unfair treatment across different recipe complexities, indicating that the predictive models are robust and equitable across the groups tested. Overall, while the models demonstrated good predictive power, the findings emphasized the importance of considering both statistical significance and practical significance when interpreting model outcomes and assessing their potential real-world applications. This project not only enhanced our understanding of factors that affect recipe ratings but also showcased the application of rigorous data science techniques to ensure fairness and reliability in predictive modeling.
         </p>
-        <h3>Visualization of Results</h3>
-        <p>
-            Below is a visualization representing the distribution of F1-Scores across the permutations conducted during the fairness analysis:
-        </p>
-        <img src="path_to_permutation_test_visualization.png" alt="Permutation Test Visualization" width="800" height="600" frameborder="0">
     </section>
 </body>
 </html>
