@@ -526,7 +526,7 @@
         <p>
             <strong>Resulting P-value:</strong> 0.815
         </p>
-        <h2>Conclusion</h2>
+        <h2>Looking Back</h2>
         <p>
             The p-value from the permutation test is <strong>0.815</strong>, which is significantly higher than our significance level of 0.05. Therefore, <strong>no significant unfairness was detected between simple and complex recipes</strong>. This suggests that any observed differences in precision between the groups can likely be attributed to random variation rather than systematic bias.
         </p>
@@ -541,7 +541,7 @@
 
 <body>
     <header>
-        <h1>Conclusion</h1>
+        <h1>Closing Remarks</h1>
     </header>
     <section>
         <p>
